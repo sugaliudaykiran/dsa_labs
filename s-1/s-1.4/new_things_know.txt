@@ -1,0 +1,4 @@
+49
+
+
+A "floating point number" is how computers usually represent numbers that are not integers -- basically, a number with a decimal point. In C++ you declare them with float instead of int. A floating point exception is an error that occurs when you try to do something impossible with a floating point number, such as divide by zero.
