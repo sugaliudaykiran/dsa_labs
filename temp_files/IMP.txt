@@ -1,0 +1,21 @@
+19 Operating Systems Questions You Shouldn't Miss Preparing before Sitting for any Software Engineering Interview.
+
+Q1. What is the difference between process and thread? 
+Q2. What are the benefits of multithreaded programming? 
+Q3. What is Virtual Memory? How is it implemented? 
+Q4. What is Paging & Segmentation? (VVI)
+Q5. What is Page Fault? How to handle it?
+Q6. Implement LRU Cache.
+Q7. Implement LFU Cache.
+Q8. What is Thrashing? (VVI)
+Q9. What is Belady’s Anomaly? 
+Q10. What is a semaphore?
+Q11 . Differences between mutex and semaphore? 
+Q12. What is a Critical Section?
+Q13. What is a deadlock? (VVI)
+Q14. What are the necessary conditions for deadlock? 
+Q15. Implement a deadlock situation using JAVA.
+Q16. Do you know about Process Scheduling ? Explain Priority Scheduling with examples and graph.
+Q17. Why do we need scheduling?
+Q18. How will you implement Priority Scheduler ? Write and Explain the code.
+Q19. What is Race around Condition?
