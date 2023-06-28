@@ -49,3 +49,37 @@ int32_t main(){
         Time complexity: O(1).
         Auxiliary space: O(1).
 */ 
+
+/*
+#include<bits/stdc++.h>
+using namespace std;
+
+int32_t main(){
+    // pair<int, int>p1;
+    // pair<int,int>p1(1,20);
+    
+    // p1 = make_pair(1, 20);
+    
+    pair p1(1, 10);
+    pair p2(2, 20);
+    if (p2.second == p1.second){
+        if (p1.first > p2.first){
+            cout << "p1 is success one.." << "\n";
+        }else{
+            cout << "p2 is success one.." << "\n";
+        }
+    }else{
+        cout << "p1 and p2 are not equal.." << "\n";
+    }
+    // p1.first=1, p1.second=20;
+
+    // cout << p1.first << " " << p1.second << "\n";
+    
+    // int x,y;
+    // tie(x,y) = p1;  // to unpack the tuple values into separate variables.
+    // cout << x << " " << y << "\n";
+    return 0;
+}
+
+*/ 
+
