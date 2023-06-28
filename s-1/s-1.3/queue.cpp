@@ -29,4 +29,30 @@ int32_t main(){
 
 /*
 
+#include<bits/stdc++.h>
+using namespace std;
+
+int32_t main(){
+    
+    queue<int>q; // FIFO -> TC => O(1)..push/pop SC -> O(N)
+    int n;
+    cin >> n;
+    
+    while(n--){
+        int x;
+        cin >> x;
+        // q.push(x);  // push's the last element..
+        q.emplace(x);
+    }
+    
+    cout << q.size() << " "<< q.back() << "\n";
+    
+    while(!q.empty()){
+        cout << q.front() << " ";
+        q.pop();
+    }cout << "\n";  // pop's the first element..
+    
+    return 0;
+}
+
 */ 

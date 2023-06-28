@@ -41,4 +41,54 @@ int32_t main(){
 
 /*
 
+#include<bits/stdc++.h>
+using namespace std;
+
+// priority_queue by default it was [max heap]..
+
+int32_t main(){
+    
+    priority_queue <int> pq; // max element will be on top after every push/pop..
+    int n;
+    cin >> n;  // push,pop, emplace ->  takes O(log N)
+    
+    while(n--){
+        int x;
+        cin >> x;
+        // pq.push(x);
+        pq.emplace(x);
+    }
+    
+    cout << pq.size() << "\n";
+    priority_queue<int> pq2;
+    
+    pq2.swap(pq);  // (swap, size, empty function..) TC -> O(N)..
+    while(!pq2.empty()){
+        cout << pq2.top() << " ";
+        pq2.pop();
+    }
+    // =========================================
+   
+   // min heap which contains smallest element in the queue after every push/pop..
+    priority_queue<int, vector<int>, greater<int>>min_pq;
+    
+    int n;
+    cin >> n;
+    while(n--){
+        int x;
+        cin >> x;
+        // pq.push(x);
+        min_pq.emplace(x);
+    }
+    
+    while(!min_pq.empty()){
+        cout << min_pq.top() << " ";
+        min_pq.pop();
+    }
+    return 0;
+}
+
+
+
+
 */ 

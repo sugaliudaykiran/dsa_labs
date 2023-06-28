@@ -100,3 +100,45 @@ int32_t main(){
     Accessing Elements – O(log N)
     Deleting Elements- O(log N)
 */ 
+
+/*
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int32_t main(){
+    
+    // set -> sorted, doesn't allow duplicates  TC -> O(Log N)..
+    set <int> s;
+    int n;
+    cin >> n;
+    
+    while(n--){
+        int x;
+        cin >> x;
+        // s.insert(x);
+        s.emplace(x);
+    }
+    
+    // for (auto &x: s){
+    //     cout << x << " "; 
+    // }cout << "\n";
+    
+    for (auto it=s.begin();it!=s.end();it++){
+        cout << (*it) << " ";
+    }cout << "\n";
+    
+    cout << s.count(11) << "\n";
+    // s.erase(11);
+    s.erase(s.find(11), s.find(55));
+    
+    for (auto &x: s){
+        cout << x << " ";
+    }cout << "\n";
+    
+    cout << s.count(11) << "\n";
+    
+    return 0;
+}
+
+*/ 
