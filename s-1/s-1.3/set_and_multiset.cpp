@@ -142,3 +142,37 @@ int32_t main(){
 }
 
 */ 
+
+/*
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int32_t main(){
+    
+    multiset<int>ms; // TC -> O(log N)... insert/emplace/erase 
+    int n;
+    cin >>n;
+    while(n--){
+        int x;
+        cin >> x;
+        // ms.insert(x);
+        ms.emplace(x);
+    }
+    
+    for(auto &x: ms){
+        cout << x << " ";
+    }cout << "\n";
+    
+    cout << ms.count(1) << "\n";
+    // ms.erase(1);  // removes all occurances of value.
+    // ms.erase(ms.find(1)); // removing only the iterator pointing to that address, find's from left to right.
+    // ms.erase(ms.find(1), ms.find(2)); // removes all occurances.
+    // cout << ms.count(1) << "\n";
+    
+    
+    
+    return 0;
+}
+
+*/
