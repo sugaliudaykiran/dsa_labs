@@ -1,6 +1,49 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void secondOne(int *ar,int n){
+    if (n<=1){
+        cout <<" -1 "<< "\n";  // TC -> O(N).. SC -> O(1).. In one traversal
+    }else{
+        int smaller=INT_MAX,secondSmaller=INT_MAX;
+        int greater=INT_MIN,secondGreater=INT_MIN;
+        for(int i=0;i<n; i++){
+            if (ar[i] < smaller){
+                secondSmaller = smaller;
+                smaller=ar[i];
+            }else if (secondSmaller > ar[i] && smaller < ar[i]){
+                secondSmaller = ar[i];
+            }
+            
+            if (ar[i] > greater){
+                secondGreater=greater;
+                greater=ar[i];
+            }else if (ar[i] > secondGreater && ar[i] < greater){
+                secondGreater=ar[i];
+            }
+            
+        }cout << "secondSmaller :" << smaller << " " << secondSmaller << "\n";
+        cout << "secondGreater :" << greater << " " << secondGreater << "\n";
+    }
+}
+
+int32_t main(){
+    
+    int n;
+    cin >> n;
+    
+    int ar[n];
+    for (auto &x: ar){
+        cin >> x;
+    }
+    secondOne(ar, n);
+    
+    return 0;
+}
+//======================================
+#include<bits/stdc++.h>
+using namespace std;
+
 int32_t main(){
     
     int n;
