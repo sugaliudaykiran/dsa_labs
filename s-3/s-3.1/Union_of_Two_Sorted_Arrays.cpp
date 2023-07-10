@@ -115,3 +115,52 @@ int32_t main(){
     }cout << "\n";
     return 0;
 }
+
+// ====================================================
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> fun(int n,int *ar1,int m, int *ar2){
+    vector<int>Union; // Using Two pointer approach.. works on sorted array..
+    int i=0,j=0;  //    TC -> O(N + M).. SC -> O(N + M)..
+    while(i<n&&j<m){
+        if (ar1[i]<=ar2[j]){ // checking the element when it's smaller (or) equal case then traversing "i" index..
+            if (Union.size()==0 || ar1[i]!=Union.back()){
+                Union.emplace_back(ar1[i]);
+            }i++;
+        }else{  // traversing in the "j" index..
+            if (Union.size()==0 || ar2[j]!=Union.back()){
+                Union.emplace_back(ar2[j]);
+            }j++;
+        }
+    }while(i<n){ // traversing the remaining the elements..
+        if (Union.back()!=ar1[i]){
+            Union.emplace_back(ar1[i]);
+        }i++;
+    }while(j<m){
+        if (Union.back()!=ar2[j]){
+            Union.emplace_back(ar2[j]);
+        }j++;
+    }return Union;
+}
+
+int32_t main(){
+    
+    int n,m;
+    cin >> n >> m;
+    int ar1[n];
+    for (auto &x: ar1){
+        cin >> x;
+    }
+    int ar2[m];
+    for (auto &x: ar2){
+        cin >> x;
+    }
+    auto it1=ar1, it2=ar2;
+    vector<int> v = fun(n,ar1,m,ar2);
+    
+    for (auto &x: v){
+        cout << x << " ";
+    }cout << "\n";
+    return 0;
+}
