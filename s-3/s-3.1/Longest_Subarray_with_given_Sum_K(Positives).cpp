@@ -1,8 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int Hashing(int n, int *ar, int k){
+    // map<int,int>mp;// TC -> O(N*LogN)..     SC -> O(N)..
+    unordered_map<int, int>mp;  // TC -> O(N*N).. SC -> O(N)..
+    int MaxLen=INT_MIN, PrefixSum=0, remainSum=0;
+    for (int i=0;i<n;i++){
+        PrefixSum+=ar[i];
+        if (PrefixSum==k){
+            MaxLen=max(MaxLen, i+1);
+        }
+        remainSum=PrefixSum-k;
+        if (mp.find(remainSum)!= mp.end()){
+            int len=i-mp[remainSum];
+            MaxLen=max(MaxLen,len);
+        }if (mp.find(PrefixSum)==mp.end()){
+            mp[PrefixSum]=i;
+        }
+    }return MaxLen;
+}
+
+
 int LongSubArrayLen(int n, int *ar, int k){
-    int Maxs=INT_MIN;  // Using two pointer..
+    int Maxs=INT_MIN;  // Using two Loops..
     for (int i=0;i<n;i++){  //  TC -> O(N^2)..      SC -> O(1)..
         int xsum=0;
         for (int j=i;j<n;j++){
@@ -75,7 +95,10 @@ int32_t main(){
     //     cout << ar[i] << " ";
     // }cout << "\n";
     
-    int count = LongSubArrayLen(n, ar, k);
+    // int count = LongSubArrayLen(n, ar, k);
+    // cout << count << "\n";
+    
+     int count = Hashing(n, ar, k);
     cout << count << "\n";
     return 0;
 }
