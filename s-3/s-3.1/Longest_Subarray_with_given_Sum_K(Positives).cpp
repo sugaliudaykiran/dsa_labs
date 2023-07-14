@@ -1,10 +1,45 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+int usingTwoPoint(int n, int *ar, int k){
+    int right=0,left=0, sum=ar[0], MaxLen=0; // Using Two Pointer.. 
+    while(right<n){  // TC -> O(2*N)..       SC -> O(N)..
+        while(left<=right && sum>k){ 
+            sum-=ar[left];
+            left++;
+        }if (sum==k){
+            MaxLen=max(MaxLen, right-left+1);
+        }right++;
+        if (right<n){
+            sum+=ar[right];
+        }
+    }return MaxLen;
+}
+
 int Hashing(int n, int *ar, int k){
     // map<int,int>mp;// TC -> O(N*LogN)..     SC -> O(N)..
     unordered_map<int, int>mp;  // TC -> O(N*N).. SC -> O(N)..
     int MaxLen=INT_MIN, PrefixSum=0, remainSum=0;
+    for (int i=0;i<n;i++){
+        PrefixSum+=ar[i];
+        if (PrefixSum==k){
+            MaxLen=max(MaxLen, i+1);
+        }
+        remainSum=PrefixSum-k;
+        if (mp.find(remainSum)!= mp.end()){
+            int len=i-mp[remainSum];
+            MaxLen=max(MaxLen,len);
+        }if (mp.find(PrefixSum)==mp.end()){
+            mp[PrefixSum]=i;
+        }
+    }return MaxLen;
+}
+
+int Hashing(int n, int *ar, int k){
+    // map<int,int>mp;// TC -> O(N*LogN)..     SC -> O(N)..
+    unordered_map<int, int>mp;  // TC -> O(N) in the Amotizated case 
+    int MaxLen=INT_MIN, PrefixSum=0, remainSum=0;// TC -> O(N*N)..in worst case. SC -> O(N)..
     for (int i=0;i<n;i++){
         PrefixSum+=ar[i];
         if (PrefixSum==k){
@@ -98,7 +133,10 @@ int32_t main(){
     // int count = LongSubArrayLen(n, ar, k);
     // cout << count << "\n";
     
-     int count = Hashing(n, ar, k);
+    //  int count = Hashing(n, ar, k);
+    
+    int count = usingTwoPoint(n, ar, k);
     cout << count << "\n";
+    
     return 0;
 }
