@@ -2,7 +2,7 @@
 using namespace std;
 
 int BinarySearchRecursive(int *ar, int low, int high, int k){
-    if (low>high){
+    if (low>high){  // TC -> O(LogN).. SC -> O(1)..
         return -1;
     }
     int mid=(low+high)/2;
@@ -16,7 +16,7 @@ int BinarySearchRecursive(int *ar, int low, int high, int k){
 }
 
 int BinarySearchIterative(int n,int *ar, int k){
-    int low=0,high=n-1;
+    int low=0,high=n-1;  // TC -> O(LogN).. SC -> O(1)..
     while(low<=high){
         int mid=(low+high)/2;
         if (ar[mid]==k){
