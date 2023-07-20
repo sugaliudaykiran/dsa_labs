@@ -31,7 +31,7 @@ int lastPosition(vector<int> &arr, int n, int k) {
     }return ans;
 }
 
-int count(vector<int>& arr, int n, int x) {
+int count(vector<int>& arr, int n, int x) {  // TC -> O(2*Log N).. where N is size of array.. SC -> O(1)..
 	return (lastPosition(arr,n,x)==-1)?0:lastPosition(arr,n,x)-firstPosition(arr,n,x)+1;
 }
 
