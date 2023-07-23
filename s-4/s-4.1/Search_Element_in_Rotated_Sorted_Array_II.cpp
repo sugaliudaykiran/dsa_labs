@@ -6,11 +6,12 @@ bool searchInARotatedSortedArrayII(vector<int>&A, int key) {
     int low=0,high=n-1;
     while(low<=high){
         int mid=low+(high-low)/2;
-        if (A[mid]==key){  // TC -> O(Log N)..  SC -> O(1)..
-            return true;
+        if (A[mid]==key){  // TC -> O(Log N)..  SC -> O(1).. in the best/avg case
+            return true;    //  TC -> O(N/2)..  SC -> O(1).. in the worst case
         }else if (A[mid]==A[low] && A[mid]==A[high]){
             low+=1; // previous case it won't work.. so we have to do this..
             high-=1; // compressing the pointers
+            continue;
         }else if (A[low]<=A[mid]){
             if (A[low]<=key && A[mid]>=key){
                 high=mid-1;
