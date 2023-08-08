@@ -7,7 +7,7 @@ public:
         string res=""; // comparing the least length string and storing the common charcter.
         int len=min(s1.size(), s2.size());
         for (int i=0;i<len;i++){
-            if (s1[i]!=s2[i]){  // TC -> O(N*Length(least common prefix - string))
+            if (s1[i]!=s2[i]){  // TC -> O(N*Length(least common prefix string))
                 break;   // SC -> O(1)..
             }res+=s1[i];
         }return res;
