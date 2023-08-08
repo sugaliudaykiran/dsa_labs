@@ -21,7 +21,7 @@ struct TrieNode *getNode(void){
 
 void insert(struct TrieNode *root,string key){
     struct TrieNode *curNode = root;
-    
+                                    // TC -> 0(N)..
     for(int i=0;i<key.size();i++){
         int index=key[i]-'a';
         if (!curNode -> child[index]){
